@@ -9,27 +9,26 @@ const Header: React.FC = () => {
   };
 
   return (
-    <header className="relative w-full py-6">
-      {/* Language button - locked to top-right */}
-      <div className="absolute right-2 top-2 sm:right-6 sm:top-6 z-10">
+    <header className="px-4 py-4 sm:py-6">
+      <div className="max-w-xl mx-auto flex justify-between items-center">
+        <div className="text-center flex-1">
+          <h1 className="text-xl sm:text-2xl font-bold text-[#1865f2]">
+            <span role="img" aria-label="currency exchange icon" className="mr-2">💱</span>
+            {t('headerTitle')}
+          </h1>
+          <p className="text-slate-600 mt-1 text-sm">
+            {t('headerSubtitle')}
+          </p>
+        </div>
+
+        {/* Language Button - Now inline, not absolute */}
         <button
           onClick={toggleLanguage}
-          className="px-3 py-1.5 text-xs font-medium rounded-md bg-slate-200 hover:bg-slate-300 text-[#1865f2] transition-colors"
+          className="ml-2 px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs whitespace-nowrap"
           aria-label={language === 'en' ? t('switchToPortuguese') : t('switchToEnglish')}
         >
-          {language === 'en' ? 'PT' : 'EN'}
+          🌐 {language === 'en' ? 'EN' : 'PT'}
         </button>
-      </div>
-
-      {/* Header content - add right padding to prevent overlap */}
-      <div className="mx-auto text-center pr-14">
-        <h1 className="text-3xl font-bold text-[#1865f2]">
-          <span role="img" aria-label="currency exchange icon" className="mr-2">💱</span>
-          {t('headerTitle')}
-        </h1>
-        <p className="text-slate-600 mt-1 text-sm">
-          {t('headerSubtitle')}
-        </p>
       </div>
     </header>
   );
