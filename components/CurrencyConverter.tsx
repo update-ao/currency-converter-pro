@@ -6,6 +6,7 @@ import CurrencySelector from './CurrencySelector';
 import LoadingSpinner from './LoadingSpinner';
 import ErrorMessage from './ErrorMessage';
 import HistoricalChart from './HistoricalChart';
+import Header from './Header';
 import { useLocalization } from '../contexts/LocalizationContext';
 import { currencyToCountryCodeMap, getFlagEmojiForCurrency } from '../utils/currencyUtils';
 
