@@ -6,9 +6,9 @@ import CurrencySelector from './CurrencySelector';
 import LoadingSpinner from './LoadingSpinner';
 import ErrorMessage from './ErrorMessage';
 import HistoricalChart from './HistoricalChart';
-import Header from './Header';
 import { useLocalization } from '../contexts/LocalizationContext';
 import { currencyToCountryCodeMap, getFlagEmojiForCurrency } from '../utils/currencyUtils';
+import Header from './Header';
 
 const timeRangePresets: TimeRangePreset[] = [
   { labelKey: 'timeRange7D', value: '7D', days: 7 },
@@ -334,7 +334,12 @@ const CurrencyConverter: React.FC = () => {
 
 
   return (
-    <div className="bg-white p-4 sm:p-6 md:p-8 rounded-xl shadow-2xl w-full max-w-2xl mx-auto">
+    <>
+  <Header />
+
+  {/* MAIN CONTENT */}
+  <div className="bg-white p-4 sm:p-6 md:p-8 rounded-xl shadow-2xl w-full max-w-2xl mx-auto">
+    ...<div className="bg-white p-4 sm:p-6 md:p-8 rounded-xl shadow-2xl w-full max-w-2xl mx-auto">
             {/* LANGUAGE BUTTON - Top Right */}
       <div className="flex justify-end mb-4">
         <button
