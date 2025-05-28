@@ -340,14 +340,6 @@ const CurrencyConverter: React.FC = () => {
   {/* MAIN CONTENT */}
   <div className="bg-white p-4 sm:p-6 md:p-8 rounded-xl shadow-2xl w-full max-w-2xl mx-auto">
     ...<div className="bg-white p-4 sm:p-6 md:p-8 rounded-xl shadow-2xl w-full max-w-2xl mx-auto">
-            {/* LANGUAGE BUTTON - Top Right */}
-      <div className="flex justify-end mb-4">
-        <button
-          className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs whitespace-nowrap"
-          aria-label="Change Language"
-        >
-          🌐 EN
-        </button>
       </div>
       <div className="space-y-6">
         <div className="grid grid-cols-1 md:grid-cols-1 gap-4 items-end">
