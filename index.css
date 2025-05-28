@@ -1,0 +1,25 @@
+/* src/index.css */
+
+/* Base font size */
+html {
+  font-size: 16px;
+}
+
+/* Adjust font size for smaller screens */
+@media (max-width: 640px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+/* Ensure images scale properly */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Prevent layout shift on buttons/icons */
+button svg {
+  display: inline-block;
+  vertical-align: middle;
+}

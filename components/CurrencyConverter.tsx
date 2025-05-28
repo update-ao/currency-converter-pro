@@ -333,7 +333,7 @@ const CurrencyConverter: React.FC = () => {
 
 
   return (
-    <div className="bg-white p-6 sm:p-8 rounded-xl shadow-2xl w-full max-w-2xl mx-auto">
+    <div className="bg-white p-4 sm:p-6 md:p-8 rounded-xl shadow-2xl w-full max-w-2xl mx-auto">
       <div className="space-y-6">
         <div className="grid grid-cols-1 md:grid-cols-1 gap-4 items-end">
           <AmountInput
@@ -359,7 +359,7 @@ const CurrencyConverter: React.FC = () => {
             onClick={handleSwapCurrencies}
             title={t('swapButtonLabel')}
             aria-label={t('swapButtonLabel')}
-            className="p-3 mt-3 sm:mt-6 bg-slate-100 hover:bg-slate-200 rounded-full text-[#1865f2] transition-colors duration-150"
+            className="p-3 mt-3 sm:mt-6 self-center sm:self-auto bg-slate-100 hover:bg-slate-200 rounded-full text-[#1865f2] transition-colors duration-150"
             disabled={isLoadingCurrencies || isLoadingRates || currencyOptions.flatMap(g => g.currencies).length < 2}
           >
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">

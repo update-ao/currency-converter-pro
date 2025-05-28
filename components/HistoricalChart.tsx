@@ -234,7 +234,7 @@ const HistoricalChart: React.FC<HistoricalChartProps> = ({
   }
 
   return (
-    <div className="h-72 md:h-96 relative bg-white p-4 rounded-lg shadow-inner">
+    <div className="h-64 sm:h-72 md:h-96 relative bg-white p-4 rounded-lg shadow-inner">
       {isLoading && <LoadingSpinner text={t('loadingHistoricalData')} />}
       <ErrorMessage message={error} />
       {!isLoading && !error && historicalData && historicalData.length === 0 && (
