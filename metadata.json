@@ -1,0 +1,6 @@
+{
+  "name": "Currency Converter Pro",
+  "description": "A fast and reliable currency converter app providing daily updated exchange rates for approximately the top 100 most used world currencies, grouped by region. Features include historical data and fallback API support.",
+  "requestFramePermissions": [],
+  "prompt": ""
+}
