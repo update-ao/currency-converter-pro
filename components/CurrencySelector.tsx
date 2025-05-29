@@ -43,12 +43,9 @@ const CurrencySelector: React.FC<CurrencySelectorProps> = ({
             label={t(group.regionKey)}
             // MODIFICATION: Apply bold and slightly larger text to optgroup label
             // Tailwind's font sizes are typically in rems (1rem = 16px).
-            // text-base is 16px. text-lg is 18px. text-xl is 20px.
-            // If the base select text is text-xs (12px), text-base (16px) is +4px.
-            // Consider text-sm (14px) for the optgroup if text-xs is too small for options.
-            // Let's assume current select text is text-xs (12px).
-            // For region +4px = 16px (text-base)
-            // For currency -4px from region = 12px (text-xs)
+            // Consider 14px for the optgroup if text-xs is too small for options.
+            // For region 1px 
+            // For currency 14px (text-base)
             // Ensure font-bold is applied.
             className="font-bold text-base" // Apply bold and a base font size for the region
           >
