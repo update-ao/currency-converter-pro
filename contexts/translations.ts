@@ -2,8 +2,8 @@
 export const translations = {
   en: {
     // Header
-    headerTitle: "Currency Converter Pro",
-    headerSubtitle: "Fast & Reliable Exchange Rates",
+    headerTitle: "Currency Converter",
+    headerSubtitle: "Fast & Reliable",
     switchToPortuguese: "Ver em Português",
     switchToEnglish: "View in English",
 
@@ -61,8 +61,8 @@ export const translations = {
   },
   'pt-PT': {
     // Header
-    headerTitle: "Conversor de Moedas Pro",
-    headerSubtitle: "Taxas de Câmbio Rápidas e Confiáveis",
+    headerTitle: "Taxas de Câmbio",
+    headerSubtitle: "Rápidas e Confiáveis",
     switchToPortuguese: "Ver em Português",
     switchToEnglish: "View in English",
 

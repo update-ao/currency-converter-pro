@@ -379,17 +379,14 @@ const CurrencyConverter: React.FC = () => {
   const fromCountryFlagCode = currencyToCountryCodeMap[fromCurrency.toLowerCase()];
  const toCountryFlagCode = currencyToCountryCodeMap[toCurrency.toLowerCase()];
 
-
-
-
 return (
- <>
-   <Header />
+  <>
+    <Header/>
 
-
-   {/* MAIN CONTENT AREA */}
-   <div className="bg-white p-4 sm:p-6 md:p-8 rounded-xl shadow-2xl w-full max-w-2xl mx-auto">
-     <div className="space-y-6">
+    {/* MAIN CONTENT */}
+    <div className="bg-white p-4 sm:p-6 md:p-8 rounded-xl shadow-2xl w-full max-w-2xl mx-auto">
+      <div className="space-y-6">
+        
        {/* Amount Input Section */}
        <div className="grid grid-cols-1 gap-4 items-end">
          <AmountInput
