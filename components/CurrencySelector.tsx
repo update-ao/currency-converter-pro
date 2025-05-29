@@ -26,7 +26,7 @@ const CurrencySelector: React.FC<CurrencySelectorProps> = ({
 
   return (
     <div className={`flex-1 ${className}`}>
-      <label htmlFor={id} className="block text-sm font-medium text-slate-700 mb-1">
+      <label htmlFor={id} className="block text-13px font-medium text-slate-700 mb-1">
         {label}
       </label>
       <select
@@ -34,7 +34,7 @@ const CurrencySelector: React.FC<CurrencySelectorProps> = ({
         value={selectedValue}
         onChange={(e) => onChange(e.target.value)}
         disabled={disabled || isLoading}
-        className="w-full p-3 border border-slate-300 rounded-lg shadow-sm focus:ring-2 focus:ring-[#1865f2] focus:border-[#1865f2] bg-white text-slate-900 transition duration-150 ease-in-out text-xs sm:text-base"
+        className="w-full p-3 border border-slate-300 rounded-lg shadow-sm focus:ring-2 focus:ring-[#1865f2] focus:border-[#1865f2] bg-white text-slate-900 transition duration-150 ease-in-out text-13px sm:text-13px"
       >
         {isLoading && <option value="">{t('loadingCurrenciesDropdown')}</option>}
         {!isLoading && options.map((group) => (
