@@ -34,27 +34,35 @@ const CurrencySelector: React.FC<CurrencySelectorProps> = ({
         value={selectedValue}
         onChange={(e) => onChange(e.target.value)}
         disabled={disabled || isLoading}
-        className="w-full p-3 border border-slate-300 rounded-lg shadow-sm focus:ring-2 focus:ring-[#1865f2] focus:border-[#1865f2] bg-white text-slate-900 transition duration-150 ease-in-out text-13px sm:text-13px"
+        // MODIFICATION: Apply a consistent text size to the select element itself
+        // This will affect the selected value displayed in the dropdown.
+        // Let's use text-base which is 16px by default, a common size for inputs.
+        // If "100" is smaller, you might use 'text-sm' (14px) or 'text-13px' if defined.
+        className="w-full p-3 border border-slate-300 rounded-lg shadow-sm focus:ring-2 focus:ring-[#1865f2] focus:border-[#1865f2] bg-white text-slate-900 transition duration-150 ease-in-out text-base" // Changed to text-base
       >
         {isLoading && <option value="">{t('loadingCurrenciesDropdown')}</option>}
         {!isLoading && options.map((group) => (
           <optgroup
             key={group.regionKey}
             label={t(group.regionKey)}
-            // MODIFICATION: Apply bold and slightly larger text to optgroup label
-            // Tailwind's font sizes are typically in rems (1rem = 16px).
-            // Consider 14px for the optgroup if text-xs is too small for options.
-            // For region 1px 
-            // For currency 14px (text-base)
-            // Ensure font-bold is applied.
-            className="font-bold text-base" // Apply bold and a base font size for the region
+            // MODIFICATION: Apply bold and a slightly larger font size for the region label
+            // A common approach is to make optgroup labels slightly larger than options.
+            // Let's try 'text-sm' (14px) for the region label to be subtle but distinct.
+            className="font-bold text-sm" // Region label: bold, 14px
           >
             {group.currencies.map((option: CurrencyOption) => (
               <option
                 key={option.value}
                 value={option.value}
-                // MODIFICATION: Apply smaller text (not bold) to options
-                className="text-xs" // Apply smaller text for the currency option
+                // MODIFICATION: Apply the target text size (e.g., text-base/16px) to the options
+                // This will make the individual currency options match the input.
+                // We remove the explicit 'text-xs' as 'text-base' or similar from the parent select
+                // might propagate, but it's safer to explicitly set it if needed.
+                // However, generally, options inherit from the <select> or are styled by browser.
+                // For cross-browser consistency, sometimes you apply classes here,
+                // but direct styling of <option> can be tricky.
+                // Let's rely on the <select> class for now. If it doesn't work,
+                // you might need custom CSS or a different component approach.
               >
                 {option.label}
               </option>
