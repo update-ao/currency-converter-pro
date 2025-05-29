@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { GroupedCurrencyOption, CurrencyOption } from '../types';
 import { useLocalization } from '../contexts/LocalizationContext';
@@ -35,13 +34,31 @@ const CurrencySelector: React.FC<CurrencySelectorProps> = ({
         value={selectedValue}
         onChange={(e) => onChange(e.target.value)}
         disabled={disabled || isLoading}
-        className="w-full p-3 border border-slate-300 rounded-lg shadow-sm focus:ring-2 focus:ring-[#1865f2] focus:border-[#1865f2] bg-white text-slate-900 transition duration-150 ease-in-out"
+        className="w-full p-3 border border-slate-300 rounded-lg shadow-sm focus:ring-2 focus:ring-[#1865f2] focus:border-[#1865f2] bg-white text-slate-900 transition duration-150 ease-in-out text-xs sm:text-base"
       >
         {isLoading && <option value="">{t('loadingCurrenciesDropdown')}</option>}
         {!isLoading && options.map((group) => (
-          <optgroup key={group.regionKey} label={t(group.regionKey)}>
+          <optgroup
+            key={group.regionKey}
+            label={t(group.regionKey)}
+            // MODIFICATION: Apply bold and slightly larger text to optgroup label
+            // Tailwind's font sizes are typically in rems (1rem = 16px).
+            // text-base is 16px. text-lg is 18px. text-xl is 20px.
+            // If the base select text is text-xs (12px), text-base (16px) is +4px.
+            // Consider text-sm (14px) for the optgroup if text-xs is too small for options.
+            // Let's assume current select text is text-xs (12px).
+            // For region +4px = 16px (text-base)
+            // For currency -4px from region = 12px (text-xs)
+            // Ensure font-bold is applied.
+            className="font-bold text-base" // Apply bold and a base font size for the region
+          >
             {group.currencies.map((option: CurrencyOption) => (
-              <option key={option.value} value={option.value}>
+              <option
+                key={option.value}
+                value={option.value}
+                // MODIFICATION: Apply smaller text (not bold) to options
+                className="text-xs" // Apply smaller text for the currency option
+              >
                 {option.label}
               </option>
             ))}
